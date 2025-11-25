@@ -89,10 +89,15 @@ Consulta de Documentos via RAG
 agentes_pesquisadores/
 │
 ├── app.py                # Código principal da aplicação (Gradio + CrewAI + LlamaIndex)
+│
 ├── artigo_data/          # Vetores e índices persistidos da base de artigos (RAG)
+│
 ├── livro_data/           # Vetores e índices persistidos da base de livros (RAG)
+│
 ├── requirements.txt      # Dependências do projeto
+│
 └── README.md             # Documentação completa do projeto
+
 
 ---
 # 🛠️ Tecnologias Utilizadas
