@@ -20,18 +20,14 @@ Expor tudo em uma interface Gradio multilayout
 ---
 # 🧠 Arquitetura Geral
 flowchart TD
+  A[Usuário] --> B[Gradio UI]
+  B --> C[CrewAI Manager]
+  C --> D1[Agente arXiv]
+  C --> D2[Agente Web Tavily]
+  C --> D3[Agente Verificador (RAG)]
+  D3 --> E[LlamaIndex + Vetores]
+  E --> F[LLM: Groq Llama 3.3-70B]
 
-    A[Usuário] --> B[Gradio UI<br>Aba 1: Pesquisa por tema (CrewAI)<br>Aba 2: Perguntas sobre documentos locais (RAG)]
-
-    B --> C[CrewAI - Processo Hierárquico<br>Agente Gerente]
-
-    C --> D1[Agente arXiv<br>Busca artigos científicos]
-    C --> D2[Agente Web / Tavily<br>Busca na web]
-    C --> D3[Agente Verificador<br>RAG local com LlamaIndex]
-
-    D3 --> E[LlamaIndex + Vetores Locais<br>Embeddings • Similaridade • k-NN<br>Respostas ancoradas em dados]
-
-    E --> F[LLM Groq<br>Llama 3.3-70B Versatile]
 
 ---
 # ⭐ Principais Funcionalidades
@@ -92,11 +88,12 @@ Consulta de Documentos via RAG
 # 📂 Estrutura do Projeto
 agentes_pesquisadores/
 │
-├── app.py                 # Código principal
-├── artigo_data/           # Vetores/índices RAG - artigos (persist)
-├── livro_data/            # Vetores/índices RAG - livro (persist)
-├── requirements.txt
-└── README.md
+├── app.py                # Código principal da aplicação (Gradio + CrewAI + LlamaIndex)
+├── artigo_data/          # Vetores e índices persistidos da base de artigos (RAG)
+├── livro_data/           # Vetores e índices persistidos da base de livros (RAG)
+├── requirements.txt      # Dependências do projeto
+└── README.md             # Documentação completa do projeto
+
 ---
 # 🛠️ Tecnologias Utilizadas
 ## 🧠 LLMs
