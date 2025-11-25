@@ -62,7 +62,7 @@ O sistema coordena 3 agentes:
 | **Agente Web (Tavily)**    | Busca artigos modernos na web          |
 | **Agente Verificador RAG** | Valida fontes usando documentos locais |
 ---
-#✅ 2. RAG Local com LlamaIndex
+# ✅ 2. RAG Local com LlamaIndex
 
 Suporte a múltiplas bases de conhecimento:
 
