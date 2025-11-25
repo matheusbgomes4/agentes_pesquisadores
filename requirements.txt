@@ -1,0 +1,10 @@
+crewai
+crewai-tools
+gradio
+tavily-python
+python-dotenv
+arxiv
+llama-index
+llama-index-llms-groq
+llama-index-agent-openai
+requests

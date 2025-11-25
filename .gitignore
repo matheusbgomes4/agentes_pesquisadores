@@ -1,0 +1,10 @@
+.env
+meu_env/ 
+
+artigo_data/
+livro_data/
+
+
+__pycache__/
+*.pyc
+.vscode/
