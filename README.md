@@ -2,6 +2,19 @@
 Sistema multiagente para pesquisa científica automatizada com arXiv, Tavily, RAG local e inferência LLM Groq (Llama 3.3-70B)
 ---
 
+# 🚀 Demo Online (Hugging Face Spaces)
+
+Você pode testar o sistema completo diretamente online, sem instalar nada:
+
+## 🔗 **https://huggingface.co/spaces/mtgomes/projeto_ia**
+
+Essa demo roda o mesmo pipeline do projeto:
+- CrewAI multi-agente  
+- Busca arXiv + Web  
+- LlamaIndex (RAG)  
+- LLM com Groq  
+- Interface interativa  
+---
 # 📌 Resumo do Projeto
 
 Este projeto implementa um sistema completo de agentes inteligentes capaz de:
