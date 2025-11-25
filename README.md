@@ -19,39 +19,20 @@ Fornecer respostas estruturadas e contextualizadas
 Expor tudo em uma interface Gradio multilayout
 ---
 # 🧠 Arquitetura Geral
-A solução integra múltiplas tecnologias avançadas:
-+-------------------------------------------------------------+
-|                        Usuário                              |
-+--------------------------+----------------------------------+
-                           |
-                           v
-+-------------------------------------------------------------+
-|                         Gradio UI                           |
-|   Aba 1: Pesquisa por tema (CrewAI)                         |
-|   Aba 2: Perguntas sobre documentos locais (RAG)            |
-+-------------------------------------------------------------+
-                           |
-                           v
-+-------------------------------------------------------------+
-|      CrewAI – Processo Hierárquico com Agente Gerente       |
-+------------------------+------------------------------------+
-|  Agente arXiv          | Busca científica na base arXiv     |
-|  Agente Web/Tavily     | Busca artigos e relatórios na web  |
-|  Agente Verificador    | RAG local com LlamaIndex           |
-+------------------------+------------------------------------+
-                           |
-                           v
-+-------------------------------------------------------------+
-|         LlamaIndex + Vetores Locais (RAG pipeline)          |
-|   - Embeddings + Similaridade                               |
-|   - QueryEngine com k-NN                                    |
-|   - Respostas ancoradas 🔍 em dados externos                 |
-+-------------------------------------------------------------+
-                           |
-                           v
-+-------------------------------------------------------------+
-|   LLM de Inferência: Groq – Llama 3.3-70B Versatile         |
-+-------------------------------------------------------------+
+flowchart TD
+
+    A[Usuário] --> B[Gradio UI<br>Aba 1: Pesquisa por tema (CrewAI)<br>Aba 2: Perguntas sobre documentos locais (RAG)]
+
+    B --> C[CrewAI - Processo Hierárquico<br>Agente Gerente]
+
+    C --> D1[Agente arXiv<br>Busca artigos científicos]
+    C --> D2[Agente Web / Tavily<br>Busca na web]
+    C --> D3[Agente Verificador<br>RAG local com LlamaIndex]
+
+    D3 --> E[LlamaIndex + Vetores Locais<br>Embeddings • Similaridade • k-NN<br>Respostas ancoradas em dados]
+
+    E --> F[LLM Groq<br>Llama 3.3-70B Versatile]
+
 ---
 # ⭐ Principais Funcionalidades
 ## ✅ 1. Pesquisa Científica Multicanal (CrewAI)
